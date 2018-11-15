@@ -62,19 +62,19 @@
 
 
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/helmetBtn"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
+        android:background="@drawable/bg_circle_transparent_border_white"
         android:src="@drawable/img_helmet"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginBottom="54dp"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginBottom="84dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
+            android:layout_centerInParent="true"
             android:src="@drawable/img_helmet"
             android:layout_width="180dp"
             android:layout_height="180dp"
@@ -91,7 +91,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </FrameLayout>
+        <!--TODO improve ripple-->
+        <View
+            android:id="@+id/loginBtn"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
 
 
 </android.support.constraint.ConstraintLayout>
