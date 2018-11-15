@@ -1,6 +1,7 @@
 package cl.cutiko.firebaseuiauth
 
 import android.animation.ObjectAnimator
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
@@ -27,6 +28,12 @@ class LoginActivity : AppCompatActivity() {
         loginBtn.setOnClickListener {
             Toast.makeText(it.context, "here", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun explosion() {
+        val animation : AnimationDrawable = explosionV.background as AnimationDrawable
+        animation.isOneShot = true
+        animation.start()
     }
 
     fun scrollBackground() {

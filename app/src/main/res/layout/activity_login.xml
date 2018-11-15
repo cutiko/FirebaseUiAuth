@@ -60,9 +60,20 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:alpha="1" />
 
+    <View
+        android:background="@drawable/animation_explosion"
+        android:id="@+id/explosionV"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginBottom="84dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 
+    <!--TODO add fade in-->
     <RelativeLayout
+        android:alpha="0"
         android:id="@+id/helmetBtn"
         android:background="@drawable/bg_circle_transparent_border_white"
         android:src="@drawable/img_helmet"
