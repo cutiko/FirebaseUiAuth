@@ -16,12 +16,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val player = MediaPlayer.create(this, R.raw.menu_audio)
-        player.start()
-
-
-        writeTitle(0)
-        scrollView.setOnTouchListener { view, event -> true }
         rootVg.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LOW_PROFILE or
                 View.SYSTEM_UI_FLAG_FULLSCREEN or
@@ -29,6 +23,14 @@ class LoginActivity : AppCompatActivity() {
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
                 View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+
+
+        val player = MediaPlayer.create(this, R.raw.menu_audio)
+        player.start()
+
+
+        writeTitle(0, 1300)
+        scrollView.setOnTouchListener { view, event -> true }
 
         loginBtn.setOnClickListener {
             //TODO log the user
@@ -69,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
         }).start()
     }
 
-    fun writeTitle(position: Int) {
+    fun writeTitle(position: Int, delay: Long) {
         val text = "Welcome Traveller"
         Handler().postDelayed({
             val current = welcomeTv.text
@@ -79,8 +81,8 @@ class LoginActivity : AppCompatActivity() {
                 scrollBackground()
                 welcomeTv.animate().setStartDelay(800).translationY(-500F).setDuration(600).start()
             } else {
-                writeTitle(position + 1)
+                writeTitle(position + 1, 250)
             }
-        }, 250)
+        }, delay)
     }
 }
