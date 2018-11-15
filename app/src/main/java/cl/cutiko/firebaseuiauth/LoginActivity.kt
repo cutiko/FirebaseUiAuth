@@ -32,6 +32,11 @@ class LoginActivity : AppCompatActivity() {
             animation.startDelay = 350
             animation.start()
         }
+        startOverlay()
+    }
+
+    fun startOverlay() {
+        overlayV.animate().setStartDelay(2800).setDuration(400).alpha(1F).start()
     }
 
     fun writeTitle(position: Int) {
