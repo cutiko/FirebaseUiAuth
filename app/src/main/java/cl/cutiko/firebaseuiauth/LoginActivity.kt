@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -27,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
 
         loginBtn.setOnClickListener {
-            Toast.makeText(it.context, "here", Toast.LENGTH_SHORT).show()
+            //TODO log the user
         }
     }
 

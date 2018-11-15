@@ -103,10 +103,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <!--TODO improve ripple-->
         <View
             android:id="@+id/loginBtn"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/blue_ripple"
             android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
