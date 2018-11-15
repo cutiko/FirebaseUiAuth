@@ -61,4 +61,37 @@
         tools:alpha="1" />
 
 
+
+    <FrameLayout
+        android:id="@+id/helmetBtn"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:src="@drawable/img_helmet"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="54dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:src="@drawable/img_helmet"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginBottom="54dp" />
+
+        <TextView
+            android:paddingTop="17dp"
+            android:textSize="31sp"
+            android:fontFamily="@font/radio"
+            android:textColor="@android:color/white"
+            android:text="LOGIN"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+
 </android.support.constraint.ConstraintLayout>
