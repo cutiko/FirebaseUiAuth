@@ -36,7 +36,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun showLoginBtn() {
-        helmetBtn.animate().setStartDelay(500).alpha(1F).setDuration(600).start();
+        helmetBtn.animate().setStartDelay(500).alpha(1F).setDuration(600).start()
+        val player = MediaPlayer.create(this, R.raw.teleport)
+        player.start()
     }
 
     fun explosion() {
