@@ -61,6 +61,8 @@
         tools:alpha="1" />
 
     <View
+        tools:visibility="visible"
+        android:visibility="gone"
         android:background="@drawable/animation_explosion"
         android:id="@+id/explosionV"
         android:layout_width="220dp"
@@ -71,7 +73,6 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
 
-    <!--TODO add fade in-->
     <RelativeLayout
         android:alpha="0"
         android:id="@+id/helmetBtn"

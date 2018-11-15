@@ -1,5 +1,6 @@
 package cl.cutiko.firebaseuiauth
 
+import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
@@ -30,9 +31,13 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    fun showLoginBtn() {
+        helmetBtn.animate().setStartDelay(500).alpha(1F).setDuration(600).start();
+    }
+
     fun explosion() {
+        explosionV.visibility = View.VISIBLE
         val animation : AnimationDrawable = explosionV.background as AnimationDrawable
-        animation.isOneShot = true
         animation.start()
     }
 
@@ -46,7 +51,16 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun startOverlay() {
-        overlayV.animate().setStartDelay(2800).setDuration(400).alpha(1F).start()
+        overlayV.animate().setStartDelay(2800).setDuration(400).alpha(1F).setListener(object : Animator.AnimatorListener {
+            override fun onAnimationRepeat(animation: Animator?) {}
+            override fun onAnimationCancel(animation: Animator?) {}
+            override fun onAnimationStart(animation: Animator?) {}
+
+            override fun onAnimationEnd(animation: Animator) {
+                explosion()
+                showLoginBtn()
+            }
+        }).start()
     }
 
     fun writeTitle(position: Int) {
