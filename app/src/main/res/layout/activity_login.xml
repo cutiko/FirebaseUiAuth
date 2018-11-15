@@ -25,6 +25,7 @@
     </ScrollView>
 
     <TextView
+        android:fontFamily="@font/radio"
         android:id="@+id/welcomeTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +33,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:textSize="31sp"
         android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
