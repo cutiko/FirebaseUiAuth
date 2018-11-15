@@ -3,6 +3,7 @@ package cl.cutiko.firebaseuiauth
 import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.graphics.drawable.AnimationDrawable
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
@@ -14,6 +15,10 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        val player = MediaPlayer.create(this, R.raw.menu_audio)
+        player.start()
+
 
         writeTitle(0)
         scrollView.setOnTouchListener { view, event -> true }
