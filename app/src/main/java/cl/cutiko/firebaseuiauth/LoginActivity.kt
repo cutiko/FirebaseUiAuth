@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
             welcomeTv.text = "$current$letter"
             if (text.length == position + 1) {
                 scrollBackground()
-                welcomeTv.animate().translationY(-500F).setDuration(600).start()
+                welcomeTv.animate().setStartDelay(800).translationY(-500F).setDuration(600).start()
             } else {
                 writeTitle(position + 1)
             }
