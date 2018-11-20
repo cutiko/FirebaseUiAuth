@@ -58,12 +58,10 @@ class SplashActivity : AppCompatActivity() {
 
         val providers = mutableListOf<AuthUI.IdpConfig>()
         providers.add(AuthUI.IdpConfig.GoogleBuilder().build())
-        providers.add(AuthUI.IdpConfig.EmailBuilder().build())
 
         val layout = AuthMethodPickerLayout
             .Builder(R.layout.activity_login)
             .setGoogleButtonId(R.id.loginBtn)
-            .setEmailButtonId(R.id.fakeHiddenEmail)
             .build()
 
         startActivityForResult(
@@ -72,6 +70,7 @@ class SplashActivity : AppCompatActivity() {
                 .setAvailableProviders(providers)
                 .setAuthMethodPickerLayout(layout)
                 .setTheme(R.style.AppTheme_NoActionBar)
+                .setAlwaysShowSignInMethodScreen(true)
                 .setIsSmartLockEnabled(false)
                 .build(),
             RCSIGNIN)
