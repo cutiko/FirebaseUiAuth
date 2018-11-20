@@ -37,6 +37,7 @@ class SplashActivity : AppCompatActivity() {
 
 /*
 * LOGCAT
+* 2018-11-20 18:53:34.586 10893-10893/cl.cutiko.firebaseuiauth W/SmartLockViewModel: Non-resolvable exception: com.google.android.gms.common.api.ApiException: 8:
 * 2018-11-20 18:42:02.737 9409-9409/cl.cutiko.firebaseuiauth E/AuthUI: A sign-in error occurred.
     com.firebase.ui.auth.FirebaseUiException: Error when saving credential.
         at com.firebase.ui.auth.viewmodel.smartlock.SmartLockHandler$1.onComplete(SmartLockHandler.java:98)
