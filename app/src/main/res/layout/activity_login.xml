@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <View
+        android:visibility="gone"
+        android:id="@+id/fakeHiddenEmail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
