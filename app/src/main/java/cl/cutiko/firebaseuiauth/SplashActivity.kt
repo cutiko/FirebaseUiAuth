@@ -1,17 +1,21 @@
 package cl.cutiko.firebaseuiauth
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.firebase.ui.auth.AuthMethodPickerLayout
+import com.firebase.ui.auth.AuthUI
 import kotlinx.android.synthetic.main.activity_splash.*
+
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
 class SplashActivity : AppCompatActivity() {
+
+    private val RCSIGNIN = 343;
     private val mHideHandler = Handler()
     private val mHidePart2Runnable = Runnable {
         // Delayed removal of status and navigation bar
@@ -52,6 +56,26 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        val providers = mutableListOf<AuthUI.IdpConfig>()
+        providers.add(AuthUI.IdpConfig.GoogleBuilder().build())
+        providers.add(AuthUI.IdpConfig.EmailBuilder().build())
+
+        val layout = AuthMethodPickerLayout
+            .Builder(R.layout.activity_login)
+            .setGoogleButtonId(R.id.loginBtn)
+            .setEmailButtonId(R.id.fakeHiddenEmail)
+            .build()
+
+        startActivityForResult(
+            AuthUI.getInstance()
+                .createSignInIntentBuilder()
+                .setAvailableProviders(providers)
+                .setAuthMethodPickerLayout(layout)
+                .setTheme(R.style.AppTheme_NoActionBar)
+                .setIsSmartLockEnabled(false)
+                .build(),
+            RCSIGNIN)
+
         mVisible = true
 
         // Set up the user interaction to manually show or hide the system UI.
@@ -62,8 +86,8 @@ class SplashActivity : AppCompatActivity() {
         // while interacting with the UI.
         dummy_button.setOnTouchListener(mDelayHideTouchListener)
 
-        val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
+        /*val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)*/
 
     }
 
