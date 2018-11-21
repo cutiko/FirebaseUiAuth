@@ -1,6 +1,7 @@
 package cl.cutiko.firebaseuiauth
 
 
+import android.animation.ObjectAnimator
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
@@ -8,12 +9,14 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginFragment : Fragment() {
 
     private lateinit var welcomeTv : TextView
+    private lateinit var scrollV : ScrollView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +36,8 @@ class LoginFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (activity == null) return
+        scrollV = activity!!.findViewById(R.id.scrollView)
+        scrollV.setOnTouchListener { view, event -> true }
         val rootView = activity!!.findViewById<ViewGroup>(R.id.rootVg)
         rootView?.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LOW_PROFILE or
@@ -53,12 +58,20 @@ class LoginFragment : Fragment() {
             val letter = text.get(position)
             welcomeTv.text = "$current$letter"
             if (text.length == position + 1) {
-                //scrollBackground()
+                scrollBackground()
                 welcomeTv.animate().setStartDelay(800).translationY(-500F).setDuration(600).start()
             } else {
                 writeTitle(position + 1, 250)
             }
         }, delay)
+    }
+
+    fun scrollBackground() {
+        scrollV.post {
+            val animation = ObjectAnimator.ofInt(scrollV, "scrollY",  scrollV.getChildAt(0).bottom).setDuration(4000)
+            animation.startDelay = 350
+            animation.start()
+        }
     }
 
 }
