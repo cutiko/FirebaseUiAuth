@@ -8,8 +8,6 @@ import com.firebase.ui.auth.AuthUI
 
 class SplashActivity : AppCompatActivity() {
 
-    private val RCSIGNIN = 343
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -33,8 +31,13 @@ class SplashActivity : AppCompatActivity() {
                 .setAlwaysShowSignInMethodScreen(true)
                 .setIsSmartLockEnabled(false)
                 .build(),
-            RCSIGNIN)
+            RC_SIGN_IN
+        )
+    }
 
 
+
+    companion object {
+        private const val RC_SIGN_IN = 343
     }
 }
