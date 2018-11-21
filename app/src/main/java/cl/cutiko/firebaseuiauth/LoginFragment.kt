@@ -1,6 +1,7 @@
 package cl.cutiko.firebaseuiauth
 
 
+import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -72,6 +73,20 @@ class LoginFragment : Fragment() {
             animation.startDelay = 350
             animation.start()
         }
+        startOverlay()
+    }
+
+    fun startOverlay() {
+        activity!!.findViewById<View>(R.id.overlayV).animate().setStartDelay(2800).setDuration(400).alpha(1F).setListener(object : Animator.AnimatorListener {
+            override fun onAnimationRepeat(animation: Animator?) {}
+            override fun onAnimationCancel(animation: Animator?) {}
+            override fun onAnimationStart(animation: Animator?) {}
+
+            override fun onAnimationEnd(animation: Animator) {
+                //explosion()
+                //showLoginBtn()
+            }
+        }).start()
     }
 
 }
