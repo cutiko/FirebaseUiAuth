@@ -3,6 +3,7 @@ package cl.cutiko.firebaseuiauth
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
+import android.graphics.drawable.AnimationDrawable
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
@@ -83,10 +84,17 @@ class LoginFragment : Fragment() {
             override fun onAnimationStart(animation: Animator?) {}
 
             override fun onAnimationEnd(animation: Animator) {
-                //explosion()
+                explosion()
                 //showLoginBtn()
             }
         }).start()
+    }
+
+    fun explosion() {
+        val view = activity!!.findViewById<View>(R.id.explosionV)
+        view.visibility = View.VISIBLE
+        val animation : AnimationDrawable = view.background as AnimationDrawable
+        animation.start()
     }
 
 }
