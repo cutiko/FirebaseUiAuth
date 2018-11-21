@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
         providers.add(AuthUI.IdpConfig.GoogleBuilder().build())
 
         val layout = AuthMethodPickerLayout
-            .Builder(R.layout.activity_login)
+            .Builder(R.layout.layout_auth_login)
             .setGoogleButtonId(R.id.loginBtn)
             .build()
 

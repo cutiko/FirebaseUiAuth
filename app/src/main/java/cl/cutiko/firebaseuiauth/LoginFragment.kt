@@ -13,7 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ScrollView
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.layout_auth_login.*
 
 class LoginFragment : Fragment() {
 
