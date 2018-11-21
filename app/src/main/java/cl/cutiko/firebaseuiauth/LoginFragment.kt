@@ -85,7 +85,7 @@ class LoginFragment : Fragment() {
 
             override fun onAnimationEnd(animation: Animator) {
                 explosion()
-                //showLoginBtn()
+                showLoginBtn()
             }
         }).start()
     }
@@ -95,6 +95,13 @@ class LoginFragment : Fragment() {
         view.visibility = View.VISIBLE
         val animation : AnimationDrawable = view.background as AnimationDrawable
         animation.start()
+    }
+
+    fun showLoginBtn() {
+        val view = activity!!.findViewById<View>(R.id.helmetBtn)
+        view.animate().setStartDelay(500).alpha(1F).setDuration(600).start()
+        val player = MediaPlayer.create(context, R.raw.teleport)
+        player.start()
     }
 
 }
