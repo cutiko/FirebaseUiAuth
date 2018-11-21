@@ -5,8 +5,7 @@
     android:id="@+id/rootVg"
     android:background="@android:color/black"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    android:layout_height="match_parent">
 
     <View
         android:visibility="gone"
