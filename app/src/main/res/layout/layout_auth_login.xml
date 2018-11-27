@@ -15,22 +15,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ScrollView
+    <cl.cutiko.firebaseuiauth.login.widgets.ScrollBackground
+        tools:background="@drawable/bg_space"
         android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/spaceIv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg_space" />
-    </ScrollView>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:fontFamily="@font/radio"

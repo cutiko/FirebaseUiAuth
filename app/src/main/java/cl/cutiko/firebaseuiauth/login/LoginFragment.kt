@@ -2,7 +2,6 @@ package cl.cutiko.firebaseuiauth.login
 
 
 import android.animation.Animator
-import android.animation.ObjectAnimator
 import android.graphics.drawable.AnimationDrawable
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -11,15 +10,15 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ScrollView
 import android.widget.TextView
 import cl.cutiko.firebaseuiauth.R
+import cl.cutiko.firebaseuiauth.login.widgets.ScrollBackground
 import kotlinx.android.synthetic.main.layout_auth_login.*
 
 class LoginFragment : Fragment() {
 
     private lateinit var welcomeTv : TextView
-    private lateinit var scrollV : ScrollView
+    private lateinit var scrollingBg : ScrollBackground
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,8 +38,7 @@ class LoginFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (activity == null) return
-        scrollV = activity!!.findViewById(R.id.scrollView)
-        scrollV.setOnTouchListener { view, event -> true }
+        scrollingBg = activity!!.findViewById(R.id.scrollView)
         val rootView = activity!!.findViewById<ViewGroup>(R.id.rootVg)
         rootView?.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LOW_PROFILE or
@@ -70,11 +68,7 @@ class LoginFragment : Fragment() {
     }
 
     fun scrollBackground() {
-        scrollV.post {
-            val animation = ObjectAnimator.ofInt(scrollV, "scrollY",  scrollV.getChildAt(0).bottom).setDuration(4000)
-            animation.startDelay = 350
-            animation.start()
-        }
+        scrollingBg.startScroll()
         startOverlay()
     }
 
