@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@drawable/ui_auth_bg_main" />
+            android:src="@drawable/bg_space" />
     </ScrollView>
 
     <TextView
