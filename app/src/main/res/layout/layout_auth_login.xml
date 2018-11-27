@@ -122,7 +122,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="cl.cutiko.firebaseuiauth.LoginFragment"
+        android:name="cl.cutiko.firebaseuiauth.login.LoginFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
