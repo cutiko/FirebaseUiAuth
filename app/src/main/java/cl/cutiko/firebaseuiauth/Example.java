@@ -2,13 +2,21 @@ package cl.cutiko.firebaseuiauth;
 
 import android.animation.Animator;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
 public class Example {
+
+    private Callback callback;
+
+
 
     private void something(){
         new Handler().post(new Runnable() {
@@ -77,5 +85,33 @@ public class Example {
 
             }
         });
+
+        TextView textView = null;
+        textView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                return false;
+            }
+        });
+        textView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+    }
+
+    interface Callback {
+        void done();
     }
 }

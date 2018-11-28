@@ -1,7 +1,6 @@
 package cl.cutiko.firebaseuiauth.login
 
 
-import android.graphics.drawable.AnimationDrawable
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -10,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import cl.cutiko.firebaseuiauth.R
+import cl.cutiko.firebaseuiauth.login.widgets.ExplosionView
 import cl.cutiko.firebaseuiauth.login.widgets.OverlayView
 import cl.cutiko.firebaseuiauth.login.widgets.ScrollBackground
 import cl.cutiko.firebaseuiauth.login.widgets.WelcomeView
@@ -48,15 +48,8 @@ class LoginFragment : Fragment() {
     }
 
     private fun showLogin() {
-        explosion()
+        activity!!.findViewById<ExplosionView>(R.id.explosionV).explode()
         showLoginBtn()
-    }
-
-    private fun explosion() {
-        val view = activity!!.findViewById<View>(R.id.explosionV)
-        view.visibility = View.VISIBLE
-        val animation : AnimationDrawable = view.background as AnimationDrawable
-        animation.start()
     }
 
     private fun showLoginBtn() {

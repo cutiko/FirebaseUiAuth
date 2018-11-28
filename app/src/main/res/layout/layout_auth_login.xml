@@ -53,7 +53,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:alpha="1" />
 
-    <View
+    <cl.cutiko.firebaseuiauth.login.widgets.ExplosionView
         tools:visibility="visible"
         android:visibility="gone"
         android:background="@drawable/animation_explosion"
