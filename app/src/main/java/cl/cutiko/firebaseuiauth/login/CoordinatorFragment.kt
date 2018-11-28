@@ -2,7 +2,6 @@ package cl.cutiko.firebaseuiauth.login
 
 
 import android.content.Context
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -15,8 +14,7 @@ class CoordinatorFragment : Fragment() {
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
-        val player = MediaPlayer.create(context, R.raw.menu_audio)
-        player.start()
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
