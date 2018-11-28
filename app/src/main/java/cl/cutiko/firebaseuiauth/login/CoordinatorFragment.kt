@@ -14,7 +14,7 @@ import cl.cutiko.firebaseuiauth.login.widgets.OverlayView
 import cl.cutiko.firebaseuiauth.login.widgets.ScrollBackground
 import cl.cutiko.firebaseuiauth.login.widgets.WelcomeView
 
-class LoginFragment : Fragment() {
+class CoordinatorFragment : Fragment() {
 
     private lateinit var welcomeTv : TextView
     private lateinit var scrollingBg : ScrollBackground

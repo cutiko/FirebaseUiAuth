@@ -106,7 +106,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="cl.cutiko.firebaseuiauth.login.LoginFragment"
+        android:name="cl.cutiko.firebaseuiauth.login.CoordinatorFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
