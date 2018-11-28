@@ -8,6 +8,10 @@ import android.view.View
 class RootViewGroup(context: Context?, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
 
     init {
+        setImmersive()
+    }
+
+    fun setImmersive() {
         systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LOW_PROFILE or
                 View.SYSTEM_UI_FLAG_FULLSCREEN or

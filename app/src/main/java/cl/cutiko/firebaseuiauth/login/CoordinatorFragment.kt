@@ -35,4 +35,9 @@ class CoordinatorFragment : Fragment() {
         activity!!.findViewById<LoginButton>(R.id.helmetBtn).fadeIn()
     }
 
+    override fun onResume() {
+        super.onResume()
+        activity?.findViewById<RootViewGroup>(R.id.rootVg)?.setImmersive()
+    }
+
 }
