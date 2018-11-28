@@ -1,13 +1,11 @@
 package cl.cutiko.firebaseuiauth.login
 
 
-import android.content.ComponentName
-import android.content.Context
-import android.content.Intent
-import android.content.ServiceConnection
+import android.content.*
 import android.os.Bundle
 import android.os.IBinder
 import android.support.v4.app.Fragment
+import android.support.v4.content.LocalBroadcastManager
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
@@ -16,11 +14,13 @@ import android.widget.CheckBox
 import android.widget.CompoundButton
 import cl.cutiko.firebaseuiauth.R
 import cl.cutiko.firebaseuiauth.login.service.PlayerService
+import cl.cutiko.firebaseuiauth.login.widgets.EXPLOSION
 
 class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedChangeListener {
 
     private lateinit var playerService: PlayerService
-    private var isServiceRunning = false;
+    private var isServiceRunning = false
+    private lateinit var broadcastReceiver: BroadcastReceiver
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
@@ -34,6 +34,15 @@ class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedCha
         playerService = binder.getPlayerService()
         if (context != null) {
             playerService.playMusic(context!!)
+            broadcastReceiver = object : BroadcastReceiver() {
+                override fun onReceive(context: Context?, intent: Intent?) {
+                    when {
+                        EXPLOSION.equals(intent?.action) && isServiceRunning -> playerService.explosion(context)
+                    }
+                }
+            }
+            val filter = IntentFilter(EXPLOSION)
+            LocalBroadcastManager.getInstance(context!!).registerReceiver(broadcastReceiver, filter)
         }
         isServiceRunning = true
     }
@@ -65,5 +74,8 @@ class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedCha
         if (isServiceRunning) playerService.pause()
     }
 
-
+    override fun onStop() {
+        if (context != null) LocalBroadcastManager.getInstance(context!!).unregisterReceiver(broadcastReceiver)
+        super.onStop()
+    }
 }

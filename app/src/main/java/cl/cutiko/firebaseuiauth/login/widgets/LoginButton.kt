@@ -1,11 +1,14 @@
 package cl.cutiko.firebaseuiauth.login.widgets
 
 import android.content.Context
-import android.media.MediaPlayer
+import android.content.Intent
+import android.support.v4.content.LocalBroadcastManager
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
 import cl.cutiko.firebaseuiauth.R
+
+const val EXPLOSION = "cl.cutiko.firebaseuiauth.login.widgets.action.EXPLOSION"
 
 class LoginButton(context: Context?, attrs: AttributeSet?) : RelativeLayout(context, attrs) {
 
@@ -16,8 +19,7 @@ class LoginButton(context: Context?, attrs: AttributeSet?) : RelativeLayout(cont
 
     fun fadeIn() {
         animate().setStartDelay(500).alpha(1F).setDuration(600).start()
-        val player = MediaPlayer.create(context, R.raw.teleport)
-        player.start()
+        LocalBroadcastManager.getInstance(context).sendBroadcast(Intent(EXPLOSION))
     }
 
 }

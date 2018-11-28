@@ -1,6 +1,9 @@
 package cl.cutiko.firebaseuiauth;
 
 import android.animation.Animator;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -109,6 +112,13 @@ public class Example {
 
             }
         });
+
+        BroadcastReceiver receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+
+            }
+        };
     }
 
     interface Callback {

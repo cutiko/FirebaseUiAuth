@@ -20,15 +20,26 @@ class PlayerService : Service() {
 
     fun playMusic(context: Context) {
         mediaPlayer = MediaPlayer.create(context, R.raw.menu_audio)
+        mediaPlayer.isLooping = true
         mediaPlayer.start()
     }
 
     fun pause() {
-        if (mediaPlayer.isPlaying) mediaPlayer.pause()
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
     }
 
     fun resume() {
-        if (!mediaPlayer.isPlaying) mediaPlayer.start()
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+        }
+    }
+
+    fun explosion(context: Context?) {
+        when {
+            mediaPlayer.isPlaying -> MediaPlayer.create(context, R.raw.teleport).start()
+        }
     }
 
     class LocalBinder : Binder() {
