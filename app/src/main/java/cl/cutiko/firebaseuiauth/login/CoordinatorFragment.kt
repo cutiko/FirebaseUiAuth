@@ -1,13 +1,13 @@
 package cl.cutiko.firebaseuiauth.login
 
 
+import android.content.Context
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import cl.cutiko.firebaseuiauth.R
 import cl.cutiko.firebaseuiauth.login.widgets.ExplosionView
 import cl.cutiko.firebaseuiauth.login.widgets.OverlayView
@@ -16,22 +16,16 @@ import cl.cutiko.firebaseuiauth.login.widgets.WelcomeView
 
 class CoordinatorFragment : Fragment() {
 
-    private lateinit var welcomeTv : TextView
-    private lateinit var scrollingBg : ScrollBackground
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        view.visibility = View.GONE
-
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
         val player = MediaPlayer.create(context, R.raw.menu_audio)
         player.start()
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val root = View(context)
+        root.visibility = View.GONE
+        return root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
