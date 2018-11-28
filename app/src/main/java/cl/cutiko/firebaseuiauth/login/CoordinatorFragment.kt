@@ -1,7 +1,6 @@
 package cl.cutiko.firebaseuiauth.login
 
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -11,11 +10,6 @@ import cl.cutiko.firebaseuiauth.R
 import cl.cutiko.firebaseuiauth.login.widgets.*
 
 class CoordinatorFragment : Fragment() {
-
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = View(context)
