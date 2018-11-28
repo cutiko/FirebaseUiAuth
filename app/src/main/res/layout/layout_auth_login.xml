@@ -25,7 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
+    <cl.cutiko.firebaseuiauth.login.widgets.WelcomeView
         android:fontFamily="@font/radio"
         android:id="@+id/welcomeTv"
         android:layout_width="wrap_content"

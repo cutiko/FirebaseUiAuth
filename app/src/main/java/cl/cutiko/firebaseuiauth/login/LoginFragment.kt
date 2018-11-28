@@ -5,7 +5,6 @@ import android.animation.Animator
 import android.graphics.drawable.AnimationDrawable
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.os.Handler
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +12,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import cl.cutiko.firebaseuiauth.R
 import cl.cutiko.firebaseuiauth.login.widgets.ScrollBackground
-import kotlinx.android.synthetic.main.layout_auth_login.*
+import cl.cutiko.firebaseuiauth.login.widgets.WelcomeView
 
 class LoginFragment : Fragment() {
 
@@ -38,28 +37,13 @@ class LoginFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (activity == null) return
-        scrollingBg = activity!!.findViewById(R.id.scrollView)
-        welcomeTv = activity!!.welcomeTv
-        writeTitle(0, 1300)
-    }
-
-    fun writeTitle(position: Int, delay: Long) {
-        val text = "Welcome Traveller"
-        Handler().postDelayed({
-            val current = welcomeTv.text
-            val letter = text.get(position)
-            welcomeTv.text = "$current$letter"
-            if (text.length == position + 1) {
-                scrollBackground()
-                welcomeTv.animate().setStartDelay(800).translationY(-500F).setDuration(600).start()
-            } else {
-                writeTitle(position + 1, 250)
-            }
-        }, delay)
+        val welcomeView = activity!!.findViewById<WelcomeView>(R.id.welcomeTv)
+        welcomeView.setCallback { scrollBackground() }
+        welcomeView.welcomeUser()
     }
 
     fun scrollBackground() {
-        scrollingBg.startScroll()
+        activity!!.findViewById<ScrollBackground>(R.id.scrollView).startScroll()
         startOverlay()
     }
 
