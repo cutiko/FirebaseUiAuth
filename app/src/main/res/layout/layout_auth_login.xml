@@ -7,14 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
-        android:visibility="gone"
-        android:id="@+id/fakeHiddenEmail"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <cl.cutiko.firebaseuiauth.login.widgets.ScrollBackground
         tools:background="@drawable/bg_space"
         android:id="@+id/scrollView"
