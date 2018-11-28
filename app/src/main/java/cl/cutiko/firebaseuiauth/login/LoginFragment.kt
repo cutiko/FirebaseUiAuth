@@ -1,7 +1,6 @@
 package cl.cutiko.firebaseuiauth.login
 
 
-import android.animation.Animator
 import android.graphics.drawable.AnimationDrawable
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -11,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import cl.cutiko.firebaseuiauth.R
+import cl.cutiko.firebaseuiauth.login.widgets.OverlayView
 import cl.cutiko.firebaseuiauth.login.widgets.ScrollBackground
 import cl.cutiko.firebaseuiauth.login.widgets.WelcomeView
 
@@ -42,32 +42,24 @@ class LoginFragment : Fragment() {
         welcomeView.welcomeUser()
     }
 
-    fun scrollBackground() {
+    private fun scrollBackground() {
         activity!!.findViewById<ScrollBackground>(R.id.scrollView).startScroll()
-        startOverlay()
+        activity!!.findViewById<OverlayView>(R.id.overlayV).fadIn { showLogin() }
     }
 
-    fun startOverlay() {
-        activity!!.findViewById<View>(R.id.overlayV).animate().setStartDelay(2800).setDuration(400).alpha(1F).setListener(object : Animator.AnimatorListener {
-            override fun onAnimationRepeat(animation: Animator?) {}
-            override fun onAnimationCancel(animation: Animator?) {}
-            override fun onAnimationStart(animation: Animator?) {}
-
-            override fun onAnimationEnd(animation: Animator) {
-                explosion()
-                showLoginBtn()
-            }
-        }).start()
+    private fun showLogin() {
+        explosion()
+        showLoginBtn()
     }
 
-    fun explosion() {
+    private fun explosion() {
         val view = activity!!.findViewById<View>(R.id.explosionV)
         view.visibility = View.VISIBLE
         val animation : AnimationDrawable = view.background as AnimationDrawable
         animation.start()
     }
 
-    fun showLoginBtn() {
+    private fun showLoginBtn() {
         val view = activity!!.findViewById<View>(R.id.helmetBtn)
         view.animate().setStartDelay(500).alpha(1F).setDuration(600).start()
         val player = MediaPlayer.create(context, R.raw.teleport)
