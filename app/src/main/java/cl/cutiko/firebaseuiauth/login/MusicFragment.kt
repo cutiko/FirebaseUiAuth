@@ -13,14 +13,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import android.widget.Toast
-
+import android.widget.CompoundButton
 import cl.cutiko.firebaseuiauth.R
 import cl.cutiko.firebaseuiauth.login.service.PlayerService
 
-class MusicFragment : Fragment(), ServiceConnection {
+class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedChangeListener {
 
     private lateinit var playerService: PlayerService
+    private var isServiceRunning = false;
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
@@ -35,11 +35,10 @@ class MusicFragment : Fragment(), ServiceConnection {
         if (context != null) {
             playerService.playMusic(context!!)
         }
-
-
+        isServiceRunning = true
     }
 
-    override fun onServiceDisconnected(name: ComponentName?) {}
+    override fun onServiceDisconnected(name: ComponentName?) { isServiceRunning = false }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_music, container, false)
@@ -48,15 +47,22 @@ class MusicFragment : Fragment(), ServiceConnection {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val cb = view.findViewById<CheckBox>(R.id.musicCb)
-        cb.setOnCheckedChangeListener { _, isChecked -> Toast.makeText(context, "VAL: $isChecked", Toast.LENGTH_LONG).show() }
+        cb.setOnCheckedChangeListener(this)
+    }
+
+    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+        if (!isServiceRunning) return
+        if (isChecked) playerService.resume() else playerService.pause()
     }
 
     override fun onResume() {
         super.onResume()
+        if (isServiceRunning) playerService.resume()
     }
 
     override fun onPause() {
         super.onPause()
+        if (isServiceRunning) playerService.pause()
     }
 
 

@@ -23,6 +23,14 @@ class PlayerService : Service() {
         mediaPlayer.start()
     }
 
+    fun pause() {
+        if (mediaPlayer.isPlaying) mediaPlayer.pause()
+    }
+
+    fun resume() {
+        if (!mediaPlayer.isPlaying) mediaPlayer.start()
+    }
+
     class LocalBinder : Binder() {
         fun getPlayerService() : PlayerService {
             return PlayerService()
