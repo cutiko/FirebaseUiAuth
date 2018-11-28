@@ -56,7 +56,6 @@
     <cl.cutiko.firebaseuiauth.login.widgets.ExplosionView
         tools:visibility="visible"
         android:visibility="gone"
-        android:background="@drawable/animation_explosion"
         android:id="@+id/explosionV"
         android:layout_width="220dp"
         android:layout_height="220dp"
