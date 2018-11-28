@@ -9,10 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import cl.cutiko.firebaseuiauth.R
-import cl.cutiko.firebaseuiauth.login.widgets.ExplosionView
-import cl.cutiko.firebaseuiauth.login.widgets.OverlayView
-import cl.cutiko.firebaseuiauth.login.widgets.ScrollBackground
-import cl.cutiko.firebaseuiauth.login.widgets.WelcomeView
+import cl.cutiko.firebaseuiauth.login.widgets.*
 
 class CoordinatorFragment : Fragment() {
 
@@ -43,14 +40,7 @@ class CoordinatorFragment : Fragment() {
 
     private fun showLogin() {
         activity!!.findViewById<ExplosionView>(R.id.explosionV).explode()
-        showLoginBtn()
-    }
-
-    private fun showLoginBtn() {
-        val view = activity!!.findViewById<View>(R.id.helmetBtn)
-        view.animate().setStartDelay(500).alpha(1F).setDuration(600).start()
-        val player = MediaPlayer.create(context, R.raw.teleport)
-        player.start()
+        activity!!.findViewById<LoginButton>(R.id.helmetBtn).fadeIn()
     }
 
 }
