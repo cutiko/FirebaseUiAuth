@@ -5,8 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.firebase.ui.auth.AuthMethodPickerLayout
-import com.firebase.ui.auth.AuthUI
+import cl.cutiko.space.RC_AUTH_SPACE
+import cl.cutiko.space.SpaceIntent
 
 
 class SplashActivity : AppCompatActivity() {
@@ -17,35 +17,13 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val providers = mutableListOf<AuthUI.IdpConfig>()
-        providers.add(AuthUI.IdpConfig.GoogleBuilder().build())
-
-        val layout = AuthMethodPickerLayout
-            .Builder(R.layout.layout_auth_space)
-            .setGoogleButtonId(R.id.loginBtn)
-            .build()
-
-        startActivityForResult(
-            AuthUI.getInstance()
-                .createSignInIntentBuilder()
-                .setAvailableProviders(providers)
-                .setAuthMethodPickerLayout(layout)
-                .setTheme(R.style.AppTheme_NoActionBar)
-                .setAlwaysShowSignInMethodScreen(true)
-                .setIsSmartLockEnabled(false)
-                .build(),
-            RC_SIGN_IN
-        )
+        startActivityForResult(SpaceIntent().get(), RC_AUTH_SPACE)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (RC_SIGN_IN == requestCode && resultCode == Activity.RESULT_OK) {
+        if (RC_AUTH_SPACE == requestCode && resultCode == Activity.RESULT_OK) {
             Toast.makeText(this, "WELCOME ON BOARD", Toast.LENGTH_LONG).show();
         }
-    }
-
-    companion object {
-        private const val RC_SIGN_IN = 343
     }
 }
