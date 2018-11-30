@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cl.cutiko.firebaseuiauth.login.widgets.RootViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+<cl.cutiko.space.widgets.RootViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rootVg"
@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <cl.cutiko.firebaseuiauth.login.widgets.ScrollBackground
+    <cl.cutiko.space.widgets.ScrollBackground
         tools:background="@drawable/bg_space"
         android:id="@+id/scrollView"
         android:layout_width="0dp"
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <cl.cutiko.firebaseuiauth.login.widgets.WelcomeView
+    <cl.cutiko.space.widgets.WelcomeView
         android:fontFamily="@font/radio"
         android:id="@+id/welcomeTv"
         android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.2" />
 
-    <cl.cutiko.firebaseuiauth.login.widgets.OverlayView
+    <cl.cutiko.space.widgets.OverlayView
         android:id="@+id/overlayV"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -53,7 +53,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:alpha="1" />
 
-    <cl.cutiko.firebaseuiauth.login.widgets.ExplosionView
+    <cl.cutiko.space.widgets.ExplosionView
         tools:visibility="visible"
         android:visibility="gone"
         android:id="@+id/explosionV"
@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
 
-    <cl.cutiko.firebaseuiauth.login.widgets.LoginButton
+    <cl.cutiko.space.widgets.LoginButton
         android:alpha="0"
         android:id="@+id/helmetBtn"
         android:background="@drawable/bg_circle_transparent_border_white"
@@ -79,13 +79,13 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="cl.cutiko.firebaseuiauth.login.CoordinatorFragment"
+        android:name="cl.cutiko.space.CoordinatorFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <fragment
         android:id="@+id/musicFragment"
-        android:name="cl.cutiko.firebaseuiauth.login.MusicFragment"
+        android:name="cl.cutiko.space.MusicFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
@@ -93,4 +93,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout="@layout/fragment_music" />
 
-</cl.cutiko.firebaseuiauth.login.widgets.RootViewGroup>
+</cl.cutiko.space.widgets.RootViewGroup>

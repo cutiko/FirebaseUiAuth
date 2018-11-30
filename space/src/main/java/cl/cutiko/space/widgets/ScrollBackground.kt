@@ -1,4 +1,4 @@
-package cl.cutiko.firebaseuiauth.login.widgets
+package cl.cutiko.space.widgets
 
 import android.animation.ObjectAnimator
 import android.content.Context
@@ -7,7 +7,7 @@ import android.util.AttributeSet
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ScrollView
-import cl.cutiko.firebaseuiauth.R
+import cl.cutiko.space.R
 
 class ScrollBackground(context: Context?, attrs: AttributeSet?) : ScrollView(context, attrs) {
 

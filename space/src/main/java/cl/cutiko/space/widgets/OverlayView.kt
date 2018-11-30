@@ -1,4 +1,4 @@
-package cl.cutiko.firebaseuiauth.login.widgets
+package cl.cutiko.space.widgets
 
 import android.animation.Animator
 import android.content.Context

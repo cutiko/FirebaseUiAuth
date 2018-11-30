@@ -1,4 +1,4 @@
-package cl.cutiko.firebaseuiauth.login.widgets
+package cl.cutiko.space.widgets
 
 import android.content.Context
 import android.support.constraint.ConstraintLayout

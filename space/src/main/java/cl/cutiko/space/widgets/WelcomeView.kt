@@ -1,4 +1,4 @@
-package cl.cutiko.firebaseuiauth.login.widgets
+package cl.cutiko.space.widgets
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,7 +7,7 @@ import android.support.v7.widget.AppCompatTextView
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
-import cl.cutiko.firebaseuiauth.R
+import cl.cutiko.space.R
 
 class WelcomeView(context: Context?, attrs: AttributeSet?) : AppCompatTextView(context, attrs) {
 

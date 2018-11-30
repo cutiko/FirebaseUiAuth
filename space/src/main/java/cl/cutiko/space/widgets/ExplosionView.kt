@@ -1,4 +1,4 @@
-package cl.cutiko.firebaseuiauth.login.widgets
+package cl.cutiko.space.widgets
 
 import android.content.Context
 import android.graphics.drawable.AnimationDrawable
@@ -6,7 +6,7 @@ import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
-import cl.cutiko.firebaseuiauth.R
+import cl.cutiko.space.R
 
 class ExplosionView(context: Context?, attrs: AttributeSet?) : ImageView(context, attrs) {
 

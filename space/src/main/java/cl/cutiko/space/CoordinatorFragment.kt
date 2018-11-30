@@ -1,4 +1,4 @@
-package cl.cutiko.firebaseuiauth.login
+package cl.cutiko.space
 
 
 import android.os.Bundle
@@ -6,8 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import cl.cutiko.firebaseuiauth.R
-import cl.cutiko.firebaseuiauth.login.widgets.*
+import cl.cutiko.space.widgets.*
 
 class CoordinatorFragment : Fragment() {
 

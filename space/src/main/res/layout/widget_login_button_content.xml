@@ -15,8 +15,9 @@
         android:textSize="31sp"
         android:fontFamily="@font/radio"
         android:textColor="@android:color/white"
-        android:text="LOGIN"
+        android:text="@string/login"
         android:gravity="center"
+        android:textAllCaps="true"
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

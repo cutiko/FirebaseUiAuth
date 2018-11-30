@@ -20,14 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
 
-        <service
-            android:name=".login.service.PlayerService"
-            android:enabled="true"
-            android:exported="false"></service>
     </application>
 
 </manifest>

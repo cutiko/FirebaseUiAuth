@@ -1,1 +1,9 @@
-<manifest package="cl.cutiko.space" />
+<manifest package="cl.cutiko.space"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <service
+            android:name=".service.PlayerService"
+            android:enabled="true"
+            android:exported="false"/>
+    </application>
+</manifest>

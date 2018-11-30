@@ -1,4 +1,4 @@
-package cl.cutiko.firebaseuiauth.login
+package cl.cutiko.space
 
 
 import android.content.*
@@ -12,9 +12,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.CompoundButton
-import cl.cutiko.firebaseuiauth.R
-import cl.cutiko.firebaseuiauth.login.service.PlayerService
-import cl.cutiko.firebaseuiauth.login.widgets.EXPLOSION
+import cl.cutiko.space.service.PlayerService
+import cl.cutiko.space.widgets.EXPLOSION
 
 class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedChangeListener {
 

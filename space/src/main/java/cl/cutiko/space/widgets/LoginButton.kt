@@ -1,4 +1,4 @@
-package cl.cutiko.firebaseuiauth.login.widgets
+package cl.cutiko.space.widgets
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,7 @@ import android.support.v4.content.LocalBroadcastManager
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
-import cl.cutiko.firebaseuiauth.R
+import cl.cutiko.space.R
 
 const val EXPLOSION = "cl.cutiko.firebaseuiauth.login.widgets.action.EXPLOSION"
 
