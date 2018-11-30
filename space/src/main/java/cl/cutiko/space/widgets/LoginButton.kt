@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.widget.RelativeLayout
 import cl.cutiko.space.R
 
-const val EXPLOSION = "cl.cutiko.firebaseuiauth.login.widgets.action.EXPLOSION"
+const val EXPLOSION = "cl.cutiko.space.widgets.action.EXPLOSION"
 
 class LoginButton(context: Context?, attrs: AttributeSet?) : RelativeLayout(context, attrs) {
 
