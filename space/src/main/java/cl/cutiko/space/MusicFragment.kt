@@ -13,7 +13,6 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.CompoundButton
 import cl.cutiko.space.service.PlayerService
-import cl.cutiko.space.widgets.EXPLOSION
 
 class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedChangeListener {
 
