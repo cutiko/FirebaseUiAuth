@@ -5,7 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import cl.cutiko.dance.body.DanceActivity
+import cl.cutiko.dance.DanceIntent
+import cl.cutiko.dance.RC_DANCE_AUTH
 import cl.cutiko.space.RC_AUTH_SPACE
 
 
@@ -17,8 +18,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        //startActivityForResult(SpaceIntent().get(), RC_AUTH_SPACE)
-        startActivity(Intent(this, DanceActivity::class.java))
+        startActivityForResult(DanceIntent().get(), RC_DANCE_AUTH)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
