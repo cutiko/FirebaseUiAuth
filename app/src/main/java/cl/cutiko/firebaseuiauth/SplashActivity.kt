@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import cl.cutiko.dance.DanceActivity
+import cl.cutiko.dance.body.DanceActivity
 import cl.cutiko.space.RC_AUTH_SPACE
 
 

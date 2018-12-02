@@ -1,4 +1,6 @@
-package cl.cutiko.dance
+package cl.cutiko.dance.body
+
+import cl.cutiko.dance.R
 
 class MusicFragment : IntroFragment() {
 

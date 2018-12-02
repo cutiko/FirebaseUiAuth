@@ -1,4 +1,4 @@
-package cl.cutiko.dance
+package cl.cutiko.dance.body
 
 import android.os.Bundle
 import android.support.annotation.DrawableRes
@@ -8,6 +8,7 @@ import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import cl.cutiko.dance.R
 import kotlinx.android.synthetic.main.fragment_intro.*
 
 abstract class IntroFragment : Fragment() {

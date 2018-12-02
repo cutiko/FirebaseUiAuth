@@ -1,7 +1,8 @@
-package cl.cutiko.dance
+package cl.cutiko.dance.body
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import cl.cutiko.dance.R
 
 class DanceActivity : AppCompatActivity() {
 
