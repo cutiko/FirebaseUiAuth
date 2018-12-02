@@ -6,4 +6,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="intro_music">Music is everything</string>
+    <string name="intro_party">Friend and Fun</string>
+    <string name="intro_permissions">We can invite your friends</string>
 </resources>
