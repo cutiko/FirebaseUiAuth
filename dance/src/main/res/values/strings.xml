@@ -1,12 +1,5 @@
 <resources>
-    <string name="app_name">dance</string>
-    <string name="title_activity_dance">DanceActivity</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="intro_music">Music is everything</string>
-    <string name="intro_party">Friend and Fun</string>
+    <string name="intro_music">Music is\neverything</string>
+    <string name="intro_party">Friend and\n Fun</string>
     <string name="intro_permissions">We can invite your friends</string>
 </resources>
