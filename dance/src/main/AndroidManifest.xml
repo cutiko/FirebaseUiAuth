@@ -6,7 +6,7 @@
         <activity
             android:name=".DanceActivity"
             android:label="@string/title_activity_dance"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/FullscreenTheme.White"/>
     </application>
 
 </manifest>
