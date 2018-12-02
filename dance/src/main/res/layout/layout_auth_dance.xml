@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true">
 
     <fragment
-        android:id="@+id/pagerAdapter"
+        android:id="@+id/pagerFragment"
         android:name="cl.cutiko.dance.body.PagerFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
