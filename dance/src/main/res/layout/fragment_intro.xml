@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:background="@color/darkPurple"
     android:layout_height="match_parent"
-    tools:context=".body.DanceActivity"
     android:theme="@style/FullscreenTheme.White">
 
     <TextView
