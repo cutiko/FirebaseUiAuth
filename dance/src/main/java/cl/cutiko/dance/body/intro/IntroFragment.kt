@@ -1,4 +1,4 @@
-package cl.cutiko.dance.body
+package cl.cutiko.dance.body.intro
 
 import android.os.Bundle
 import android.support.annotation.DrawableRes

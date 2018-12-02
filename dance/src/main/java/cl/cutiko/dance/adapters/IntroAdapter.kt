@@ -3,9 +3,9 @@ package cl.cutiko.dance.adapters
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import cl.cutiko.dance.body.MusicFragment
-import cl.cutiko.dance.body.PartyFragment
-import cl.cutiko.dance.body.PermissionFragment
+import cl.cutiko.dance.body.intro.MusicFragment
+import cl.cutiko.dance.body.intro.PartyFragment
+import cl.cutiko.dance.body.intro.PermissionFragment
 
 class IntroAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
