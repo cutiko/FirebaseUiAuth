@@ -1,6 +1,5 @@
 package cl.cutiko.dance.adapters
 
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -28,10 +27,8 @@ class DotsAdapter : RecyclerView.Adapter<DotsAdapter.DotHolder>() {
     override fun onBindViewHolder(holder: DotHolder, position: Int) {
         val dot = dots[position]
         val view = holder.itemView
-        val resColor = if (SELECTED == dot) android.R.color.holo_blue_bright else android.R.color.holo_orange_light
-        view.setBackgroundColor(
-            ContextCompat.getColor(view.context, resColor)
-        )
+        val background = if (SELECTED == dot) R.drawable.bg_dot_selected else R.drawable.bg_dot_default
+        view.setBackgroundResource(background)
     }
 
     override fun getItemCount(): Int {
