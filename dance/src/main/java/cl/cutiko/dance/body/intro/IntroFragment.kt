@@ -1,6 +1,7 @@
 package cl.cutiko.dance.body.intro
 
 import android.os.Bundle
+import android.support.annotation.CallSuper
 import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 import android.support.v4.app.Fragment
@@ -19,10 +20,12 @@ abstract class IntroFragment : Fragment() {
     @get:DrawableRes
     protected abstract val getUndraw : Int
 
+    @CallSuper
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_intro, container, false)
     }
 
+    @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         descriptionTv.setText(getText)
