@@ -1,13 +1,13 @@
 package cl.cutiko.dance.body.intro
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import cl.cutiko.dance.R
 import kotlinx.android.synthetic.main.content_fragment_permission.*
 
@@ -36,11 +36,19 @@ class PermissionFragment : IntroFragment(), View.OnClickListener {
         val readContacts = Manifest.permission.READ_CONTACTS
         if (ContextCompat.checkSelfPermission(context!!, readContacts) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(arrayOf(readContacts), RC_READ_CONTACTS)
+            permissionBtn.isEnabled = false
         }
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        Toast.makeText(context, "$requestCode", Toast.LENGTH_LONG).show()
+        if (RC_READ_CONTACTS == requestCode && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            permissionBtn.animate().alpha(0F).setDuration(800).start()
+            permissionTv.setText(R.string.contacts_thanks)
+            permissionTv.text = "${permissionTv.text}   "
+            return
+        }
+        permissionBtn.isEnabled = true
     }
 }
