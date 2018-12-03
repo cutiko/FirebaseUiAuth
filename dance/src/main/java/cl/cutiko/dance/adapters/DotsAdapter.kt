@@ -11,7 +11,6 @@ class DotsAdapter : RecyclerView.Adapter<DotsAdapter.DotHolder>() {
     companion object {
         private const val SELECTED = 1
         private const val DEFAULT = 0
-        private const val CHANGE_SIZE = 2
     }
 
     private val dots : Array<Int> = Array(INTRO_SLIDES) { DEFAULT }
