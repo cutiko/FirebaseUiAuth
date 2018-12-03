@@ -4,4 +4,5 @@
     <color name="purpleTransparent">#716c63ff</color>
     <color name="darkPurple">#1B1940</color>
     <color name="orange">#E8630C</color>
+    <color name="secondaryOrange">#FF6D0D</color>
 </resources>
