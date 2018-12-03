@@ -7,7 +7,7 @@ import cl.cutiko.dance.body.intro.MusicFragment
 import cl.cutiko.dance.body.intro.PartyFragment
 import cl.cutiko.dance.body.intro.PermissionFragment
 
-const val INTRO_SLIDES = 3
+const val INTRO_SLIDES = 4
 
 class IntroAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
@@ -20,6 +20,6 @@ class IntroAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     }
 
     override fun getCount(): Int {
-        return INTRO_SLIDES + 1
+        return INTRO_SLIDES
     }
 }
