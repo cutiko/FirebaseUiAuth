@@ -4,10 +4,13 @@ package cl.cutiko.dance.bottom
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import cl.cutiko.dance.R
+import cl.cutiko.dance.adapters.DotsAdapter
 import cl.cutiko.dance.adapters.INTRO_SLIDES
 
 class BottomFragment : Fragment(), ViewPager.OnPageChangeListener {
@@ -20,6 +23,15 @@ class BottomFragment : Fragment(), ViewPager.OnPageChangeListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_bottom, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        view as RecyclerView
+        view.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        view.setHasFixedSize(true)
+        view.adapter = DotsAdapter()
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
