@@ -15,11 +15,12 @@ import cl.cutiko.dance.adapters.INTRO_SLIDES
 
 class BottomFragment : Fragment(), ViewPager.OnPageChangeListener {
 
+    private lateinit var adapter: DotsAdapter
+
     companion object {
         private const val FADE_IN = 1F
         private const val FADE_OUT = 0F
     }
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_bottom, container, false)
@@ -30,8 +31,8 @@ class BottomFragment : Fragment(), ViewPager.OnPageChangeListener {
         view as RecyclerView
         view.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         view.setHasFixedSize(true)
-        view.adapter = DotsAdapter()
-
+        adapter = DotsAdapter()
+        view.adapter = adapter
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -51,6 +52,7 @@ class BottomFragment : Fragment(), ViewPager.OnPageChangeListener {
         if (view?.alpha != FADE_IN) {
             fade(FADE_IN)
         }
+        adapter.update(page)
     }
 
 

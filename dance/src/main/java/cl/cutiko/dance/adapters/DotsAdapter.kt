@@ -11,9 +11,11 @@ class DotsAdapter : RecyclerView.Adapter<DotsAdapter.DotHolder>() {
     companion object {
         private const val SELECTED = 1
         private const val DEFAULT = 0
+        private const val CHANGE_SIZE = 2
     }
 
     private val dots : Array<Int> = Array(INTRO_SLIDES) { DEFAULT }
+    private var previous = 0
 
     init {
         dots[0] = SELECTED
@@ -33,6 +35,14 @@ class DotsAdapter : RecyclerView.Adapter<DotsAdapter.DotHolder>() {
 
     override fun getItemCount(): Int {
         return INTRO_SLIDES
+    }
+
+    fun update(position: Int) {
+        if (position == previous) return
+        dots[position] = SELECTED
+        dots[previous] = DEFAULT
+        notifyDataSetChanged()
+        previous = position
     }
 
     class DotHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
