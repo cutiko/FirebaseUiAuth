@@ -35,5 +35,5 @@ class DotsAdapter : RecyclerView.Adapter<DotsAdapter.DotHolder>() {
         return INTRO_SLIDES
     }
 
-    class DotHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {}
+    class DotHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }
