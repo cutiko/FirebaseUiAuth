@@ -12,6 +12,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:navigationBarColor">@color/darkPurple</item>
+        <item name="android:windowBackground">@color/darkPurple</item>
     </style>
 
 </resources>
