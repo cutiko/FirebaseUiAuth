@@ -19,5 +19,6 @@ class LandscapeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         if (activity == null) return
         activity!!.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+
     }
 }
