@@ -5,8 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import cl.cutiko.dance.DanceIntent
-import cl.cutiko.dance.RC_DANCE_AUTH
+import cl.cutiko.dogos.DogosIntent
+import cl.cutiko.dogos.RC_DOGOS_AUTH
 import cl.cutiko.space.RC_AUTH_SPACE
 
 
@@ -18,7 +18,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        startActivityForResult(DanceIntent().get(), RC_DANCE_AUTH)
+        startActivityForResult(DogosIntent().get(), RC_DOGOS_AUTH)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
