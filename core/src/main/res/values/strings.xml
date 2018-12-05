@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">core</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
 </resources>
