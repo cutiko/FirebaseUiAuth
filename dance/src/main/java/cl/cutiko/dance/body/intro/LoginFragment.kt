@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import cl.cutiko.dance.R
+import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {
 
@@ -17,9 +18,12 @@ class LoginFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        val googleBtn = activity!!.findViewById<View>(R.id.googleBtn)
+        googleTv.setOnClickListener {googleBtn.performClick() }
+        val emailBtn = activity!!.findViewById<View>(R.id.emailBtn)
+        emailTv.setOnClickListener { emailBtn.performClick() }
     }
 
 }
