@@ -6,4 +6,6 @@
     <color name="white">#FFF</color>
     <color name="blackTransparent">#61000000</color>
     <color name="black_overlay">#66000000</color>
+    <color name="facebook">#3A5CA9</color>
+    <color name="google">#D14030</color>
 </resources>

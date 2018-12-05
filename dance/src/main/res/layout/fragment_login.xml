@@ -5,14 +5,46 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:src="@drawable/img_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/facebookTv"
+        style="@style/LoginButton"
+        android:backgroundTint="@color/facebook"
+        android:text="@string/facebook"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/googleTv"
+        style="@style/LoginButton"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/google"
+        android:text="@string/google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/facebookTv" />
+
+    <TextView
+        android:id="@+id/emailTv"
+        style="@style/LoginButton"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/secondaryOrange"
+        android:text="@string/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/googleTv" />
 
 </android.support.constraint.ConstraintLayout>

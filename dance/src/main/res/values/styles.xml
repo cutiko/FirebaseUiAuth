@@ -15,4 +15,20 @@
         <item name="android:windowBackground">@color/darkPurple</item>
     </style>
 
+    <style name="LoginButton">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_login_btn_ripple</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:fontFamily">@font/goeslim</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.3</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>

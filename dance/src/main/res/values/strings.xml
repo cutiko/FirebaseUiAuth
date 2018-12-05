@@ -5,4 +5,5 @@
     <string name="invite_friends">Invite Friends</string>
     <string name="contacts_rationale">Access to contacts is require for automatic party. This can be skip and configured later</string>
     <string name="contacts_thanks">Thanks</string>
+    <string name="email">Email</string>
 </resources>
