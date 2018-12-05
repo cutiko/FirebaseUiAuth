@@ -1,1 +1,1 @@
-include ':app', ':core', ':space', ':dance'
+include ':app', ':core', ':space', ':dance', ':dogos'
