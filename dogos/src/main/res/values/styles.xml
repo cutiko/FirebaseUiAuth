@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="FullscreenTheme.NoActionBar" parent="AppTheme.NoActionBar">
+        <item name="android:statusBarColor">@color/google</item>
+    </style>
+
+</resources>
