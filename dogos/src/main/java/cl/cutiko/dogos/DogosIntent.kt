@@ -21,7 +21,7 @@ class DogosIntent {
             .setAvailableProviders(providers)
             .setAuthMethodPickerLayout(layout)
             .setAlwaysShowSignInMethodScreen(true)
-            .setTheme(R.style.AppTheme_NoActionBar)
+            .setTheme(R.style.Fullscreen_NoActionBar)
             .setIsSmartLockEnabled(false)
             .build()
     }
