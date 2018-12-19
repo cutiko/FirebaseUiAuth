@@ -5,20 +5,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import cl.cutiko.dogos.DogosIntent
-import cl.cutiko.dogos.RC_DOGOS_AUTH
 import cl.cutiko.space.RC_AUTH_SPACE
+import kotlinx.android.synthetic.main.activity_splash.*
 
 
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_splash)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        startActivityForResult(DogosIntent().get(), RC_DOGOS_AUTH)
+        spaceIv.setView(R.drawable.bg_space, R.string.space_demo)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
