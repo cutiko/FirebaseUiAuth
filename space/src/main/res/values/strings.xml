@@ -2,4 +2,5 @@
 <resources>
     <string name="login">Login</string>
     <string name="welcome_traveller">welcome traveller</string>
+    <string name="space_demo">Animations and Service</string>
 </resources>
