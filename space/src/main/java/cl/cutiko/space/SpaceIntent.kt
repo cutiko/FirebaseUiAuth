@@ -4,7 +4,7 @@ import android.content.Intent
 import com.firebase.ui.auth.AuthMethodPickerLayout
 import com.firebase.ui.auth.AuthUI
 
-const val RC_AUTH_SPACE = 1
+const val RC_SPACE_AUTH = 1
 
 class SpaceIntent {
 
