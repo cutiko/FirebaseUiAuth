@@ -73,7 +73,6 @@ class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedCha
     }
 
     override fun onStop() {
-        playerService.unbindService(this)
         if (context != null) LocalBroadcastManager.getInstance(context!!).unregisterReceiver(broadcastReceiver)
         super.onStop()
     }
