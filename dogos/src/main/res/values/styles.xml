@@ -2,6 +2,7 @@
 
     <style name="FullscreenTheme.NoActionBar" parent="AppTheme.NoActionBar">
         <item name="android:statusBarColor">@color/google</item>
+        <item name="android:navigationBarColor">@color/google</item>
     </style>
 
 </resources>
