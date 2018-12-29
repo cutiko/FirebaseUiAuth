@@ -9,13 +9,14 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.graphics.Palette
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.FrameLayout
 import cl.cutiko.firebaseuiauth.R
 import kotlinx.android.synthetic.main.content_intro_view.view.*
 
 class IntroView(context: Context?, attrs: AttributeSet?) : FrameLayout(context, attrs) {
 
-    fun setView(@DrawableRes image : Int, @StringRes text : Int) {
+    fun setView(@DrawableRes image : Int, @StringRes text : Int) : View {
         LayoutInflater.from(context).inflate(R.layout.content_intro_view, this, true)
 
         val bitmap = BitmapFactory.decodeResource(resources, image)
@@ -29,6 +30,8 @@ class IntroView(context: Context?, attrs: AttributeSet?) : FrameLayout(context, 
 
         textIv.setTextColor(palette.getLightVibrantColor(ContextCompat.getColor(context, R.color.white)))
         textIv.setText(text)
+
+        return textIv
     }
 
 }
