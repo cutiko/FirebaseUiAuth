@@ -29,6 +29,7 @@ class CoordinatorFragment : Fragment() {
     }
 
     private fun scrollBackground() {
+        if (activity == null) return
         activity!!.findViewById<ScrollBackground>(R.id.scrollView).startScroll()
         activity!!.findViewById<OverlayView>(R.id.overlayV).fadIn { showLogin() }
     }
