@@ -20,7 +20,7 @@ class IntroView(context: Context?, attrs: AttributeSet?) : FrameLayout(context, 
 
         val bitmap = BitmapFactory.decodeResource(resources, image)
         val palette = Palette.from(bitmap).generate()
-        val mainColor = palette.getDominantColor(ContextCompat.getColor(context, R.color.blackTransparent))
+        val mainColor = palette.getDarkMutedColor(ContextCompat.getColor(context, R.color.blackTransparent))
 
         imageIv.setImageBitmap(bitmap)
 
