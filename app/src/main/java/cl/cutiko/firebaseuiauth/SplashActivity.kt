@@ -14,7 +14,9 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        spaceIv.setView(R.drawable.bg_space, R.string.space_demo)
+        danceIv.setView(R.drawable.thumbnail_dance, R.string.dance_demo)
+        dogsIv.setView(R.drawable.thumbnail_dogs, R.string.dogs_demo)
+        spaceIv.setView(R.drawable.thumbnail_space, R.string.space_demo)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
