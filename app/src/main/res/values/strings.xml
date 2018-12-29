@@ -4,4 +4,12 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="ui_auth_demo">Ui-Auth Demo</string>
+    <string name="dance">Denz</string>
+    <string name="dogos">Dogos</string>
+    <string name="space">Space</string>
+    <string name="result">%1$s : %2$s</string>
+    <string name="logged">Logged</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="no_internet">No Internet</string>
+    <string name="unknown">Unknown Error</string>
 </resources>
