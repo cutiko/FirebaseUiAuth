@@ -3,14 +3,15 @@ The new **4.3.0** version of Firebase ui auth is fantastic, it allow us to **cus
 
 ### Denz - Onboarding and Permissions Request
 
-<img src="denz_demo.gif?raw=true" width="200px">
+<img src="denz_demo.gif?raw=true" width="400px">
 
 ### Dogos - Background Video with Landscape Orientation
 
-![Dogos Demo](https://firebasestorage.googleapis.com/v0/b/learningfirebase-77a34.appspot.com/o/ui-auth-demos%2Fdogos_demo.gif?alt=media)
+<img src="dogos_demo.gif?raw=true" width="400px">
 
 ### Space - Animations and Music
-![Space Demo](https://firebasestorage.googleapis.com/v0/b/learningfirebase-77a34.appspot.com/o/ui-auth-demos%2Fspace_demo.gif?alt=media)
+
+<img src="space_demo.gif?raw=true" width="400px">
 
 
 #### Disclaimer
