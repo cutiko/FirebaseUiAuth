@@ -35,6 +35,7 @@ class CoordinatorFragment : Fragment() {
     }
 
     private fun showLogin() {
+        if (activity == null) return
         activity!!.findViewById<ExplosionView>(R.id.explosionV).explode()
         activity!!.findViewById<LoginButton>(R.id.helmetBtn).fadeIn()
         LocalBroadcastManager.getInstance(context!!).sendBroadcast(Intent(EXPLOSION))
