@@ -1,6 +1,6 @@
 package cl.cutiko.dance.adapters
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ class DotsAdapter : RecyclerView.Adapter<DotsAdapter.DotHolder>() {
         private const val DEFAULT = 0
     }
 
-    private val dots : Array<Int> = Array(INTRO_SLIDES) { DEFAULT }
+    private val dots: Array<Int> = Array(INTRO_SLIDES) { DEFAULT }
     private var previous = 0
 
     init {
@@ -21,15 +21,16 @@ class DotsAdapter : RecyclerView.Adapter<DotsAdapter.DotHolder>() {
     }
 
     override fun onCreateViewHolder(container: ViewGroup, type: Int): DotHolder {
-        val view = LayoutInflater.from(container.context).inflate(R.layout.holder_dot, container, false)
+        val view = LayoutInflater.from(container.context).inflate(
+            R.layout.holder_dot, container, false
+        )
         return DotHolder(view)
     }
 
     override fun onBindViewHolder(holder: DotHolder, position: Int) {
-        val dot = dots[position]
-        val view = holder.itemView
-        val background = if (SELECTED == dot) R.drawable.bg_dot_selected else R.drawable.bg_dot_default
-        view.setBackgroundResource(background)
+        holder.itemView.setBackgroundResource(
+            if (SELECTED == dots[position]) R.drawable.bg_dot_selected else R.drawable.bg_dot_default
+        )
     }
 
     override fun getItemCount(): Int {

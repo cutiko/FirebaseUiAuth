@@ -3,7 +3,7 @@ package cl.cutiko.space.widgets
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Handler
-import android.support.v7.widget.AppCompatTextView
+import androidx.appcompat.widget.AppCompatTextView
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet

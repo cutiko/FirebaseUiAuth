@@ -1,11 +1,11 @@
 package cl.cutiko.dance.body.intro
 
 import android.os.Bundle
-import android.support.annotation.CallSuper
-import android.support.annotation.DrawableRes
-import android.support.annotation.StringRes
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
+import androidx.annotation.CallSuper
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+import androidx.fragment.app.Fragment
+import androidx.core.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

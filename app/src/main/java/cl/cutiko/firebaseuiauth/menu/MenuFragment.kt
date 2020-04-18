@@ -2,7 +2,7 @@ package cl.cutiko.firebaseuiauth.menu
 
 import android.app.Activity
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,13 +42,13 @@ class MenuFragment : Fragment() {
             setText(demo, getString(R.string.logged))
             return
         } else {
-            var result = ""
+            val result: String
             if (response == null) {
                 result = getString(R.string.cancelled)
                 setText(demo, result)
                 return
             }
-            if (response.getError()?.getErrorCode() == ErrorCodes.NO_NETWORK) {
+            if (response.error?.errorCode == ErrorCodes.NO_NETWORK) {
                 result = getString(R.string.no_internet)
                 setText(demo, result)
                 return
