@@ -20,7 +20,6 @@ class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedCha
     private var isServiceRunning = false
     private lateinit var broadcastReceiver: BroadcastReceiver
 
-    override fun onAttach(context: Context?) {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         val intent = Intent(context, PlayerService::class.java)
@@ -36,7 +35,9 @@ class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedCha
             broadcastReceiver = object : BroadcastReceiver() {
                 override fun onReceive(context: Context?, intent: Intent?) {
                     when {
-                        EXPLOSION.equals(intent?.action) && isServiceRunning -> playerService.explosion(context)
+                        EXPLOSION == intent?.action && isServiceRunning -> playerService.explosion(
+                            context
+                        )
                     }
                 }
             }
