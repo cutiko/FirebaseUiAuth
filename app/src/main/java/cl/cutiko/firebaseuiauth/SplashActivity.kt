@@ -2,7 +2,7 @@ package cl.cutiko.firebaseuiauth
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import cl.cutiko.dance.DanceIntent
 import cl.cutiko.dance.RC_DANCE_AUTH
 import cl.cutiko.dogos.DogosIntent

@@ -4,14 +4,14 @@ package cl.cutiko.space
 import android.content.*
 import android.os.Bundle
 import android.os.IBinder
-import android.support.v4.app.Fragment
-import android.support.v4.content.LocalBroadcastManager
-import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.CompoundButton
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import cl.cutiko.space.service.PlayerService
 
 class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedChangeListener {
@@ -21,6 +21,7 @@ class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedCha
     private lateinit var broadcastReceiver: BroadcastReceiver
 
     override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         val intent = Intent(context, PlayerService::class.java)
         val activity = context as AppCompatActivity
@@ -28,7 +29,7 @@ class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedCha
     }
 
     override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-        val binder : PlayerService.LocalBinder = service as PlayerService.LocalBinder
+        val binder: PlayerService.LocalBinder = service as PlayerService.LocalBinder
         playerService = binder.getPlayerService()
         if (context != null) {
             playerService.playMusic(context!!)
@@ -40,14 +41,21 @@ class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedCha
                 }
             }
             val filter = IntentFilter(EXPLOSION)
-            LocalBroadcastManager.getInstance(context!!).registerReceiver(broadcastReceiver, filter)
+            LocalBroadcastManager.getInstance(context!!)
+                .registerReceiver(broadcastReceiver, filter)
         }
         isServiceRunning = true
     }
 
-    override fun onServiceDisconnected(name: ComponentName?) { isServiceRunning = false }
+    override fun onServiceDisconnected(name: ComponentName?) {
+        isServiceRunning = false
+    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_music, container, false)
     }
 
@@ -73,7 +81,9 @@ class MusicFragment : Fragment(), ServiceConnection, CompoundButton.OnCheckedCha
     }
 
     override fun onStop() {
-        if (context != null) LocalBroadcastManager.getInstance(context!!).unregisterReceiver(broadcastReceiver)
+        if (context != null) LocalBroadcastManager.getInstance(
+            context!!
+        ).unregisterReceiver(broadcastReceiver)
         super.onStop()
     }
 }
